@@ -1,0 +1,8 @@
+package br.edu.aloejb;
+
+import java.beans.*;
+
+@Remote
+public interface AloMundoBeanRemote {
+
+}

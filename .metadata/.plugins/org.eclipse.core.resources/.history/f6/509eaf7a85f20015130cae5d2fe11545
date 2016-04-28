@@ -1,0 +1,45 @@
+package br.edu.fa7.dao;
+
+import java.util.List;
+
+import org.hibernate.FetchMode;
+import org.hibernate.criterion.Restrictions;
+
+import br.edu.fa7.model.Faculdade;
+
+
+public class FaculdadeDao extends GenericDao<Faculdade>{	
+	
+    public FaculdadeDao() throws Exception{
+    	super();
+    }    
+      
+    @SuppressWarnings("unchecked")
+	public List<Faculdade> getFaculdades(String nome) throws Exception{
+    	String consulta = "from Faculdade f where f.nome like :nome " +
+    										  "and f.estaAtivo = true";
+    	return (List<Faculdade>)super.session.createQuery(consulta).setParameter("nome", "%"+nome+"%").list();
+    }
+    
+    @SuppressWarnings("unchecked")
+	public List<Faculdade> getFaculdadesCriteria(String nome) throws Exception{
+    	List<Faculdade> faculdades = super.session.createCriteria(Faculdade.class)
+    		    .add( Restrictions.like("nome", "%"+nome+"%") )
+    		    .add(Restrictions.eq("estaAtivo", true)).list();
+    	
+    	return faculdades;
+    }
+    
+    @SuppressWarnings("unchecked")
+	public List<Faculdade> getFaculdadeComCursoDeDireito(String nome) throws Exception{
+    	List<Faculdade> faculdades = super.session.createCriteria(Faculdade.class)
+    			.setFetchMode("cursos", FetchMode.JOIN)    		    
+    		    .add( Restrictions.like("nome", "%"+nome+"%") )
+    		    .createCriteria("cursos")
+    		        .add( Restrictions.like("nome", "Direito") )
+    		    .list();
+    	return faculdades;
+    	
+    }
+    
+}

@@ -1,0 +1,30 @@
+package br.edu.fa7.test;
+
+import javax.naming.NamingException;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class TestUnit {
+
+	@Test
+	public void testEcho() throws NamingException {
+
+		
+
+		try {
+			//HelloWorldEJB/ServiceSession!br.edu.fa7.ejb.ServiceSessionRemote
+
+//			EchoRemote retorno = JNDIUtils
+//					.lookup("ejb:HelloWorld/HelloWorldEJB/ServiceSession!br.edu.fa7.ejb.ServiceSessionRemote");
+			
+			EchoRemote retorno = JNDIUtils
+					.lookup("ejb:HelloWorld/HelloWorldEJB/Service!br.edu.fa7.ejb.EchoRemote");
+
+			Assert.assertEquals("teste", retorno.echo("teste"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

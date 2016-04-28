@@ -1,0 +1,79 @@
+package br.com.cursoweb.filters;
+
+import java.io.IOException;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet Filter implementation class FiltroPages
+ */
+@WebFilter("/FiltroPages")
+public class FiltroPages implements Filter {
+
+	/**
+	 * Default constructor.
+	 */
+	public FiltroPages() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see Filter#destroy()
+	 */
+	public void destroy() {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
+	 */
+	public void doFilter(ServletRequest request, ServletResponse response,
+			FilterChain chain) throws IOException, ServletException {
+
+		String page1 = "page1";
+		String page2 = "page2";
+		HttpServletRequest requestHtml = (HttpServletRequest) request;
+
+		if (requestHtml.getSession().getAttribute("user")!=null
+			&& requestHtml.getSession().getAttribute("pass") != null){
+			if (requestHtml.getServletPath()
+					.equals("/pages-business/pagina1.xhtml")) {
+	
+				Integer param = Integer.parseInt(request.getServletContext()
+						.getAttribute(page1).toString()) + 1;
+	
+				request.getServletContext().setAttribute(page1, param);
+	
+			} else if (requestHtml.getServletPath().equals(
+					"/pages-business/pagina2.xhtml")) {
+	
+				Integer param = Integer.parseInt(request.getServletContext()
+						.getAttribute(page2).toString()) + 1;
+	
+				request.getServletContext().setAttribute(page2, param);
+	
+			}
+		}else{
+			HttpServletResponse responseHtml = (HttpServletResponse) response;
+			response.se
+		}
+		chain.doFilter(request, response);
+
+	}
+
+	/**
+	 * @see Filter#init(FilterConfig)
+	 */
+	public void init(FilterConfig fConfig) throws ServletException {
+
+	}
+
+}

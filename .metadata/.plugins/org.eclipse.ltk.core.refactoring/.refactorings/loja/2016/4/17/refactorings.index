@@ -1,0 +1,29 @@
+1461195310022	Rename package 'br.edu.fa7.ejb.utils'
+1461198036977	Copy package
+1461198042353	Delete element
+1461198166517	Delete element
+1461199079004	Copy package
+1461199083085	Delete element
+1461199439915	Rename local variable 'produto'
+1461257700897	Rename type 'ProdutoImpl'
+1461257782759	Move compilation unit
+1461258133931	Copy compilation unit
+1461258170319	Rename local variable 'produto'
+1461258848998	Rename local variable 'idCliente'
+1461258856020	Rename local variable 'idCompra'
+1461259237835	Copy compilation unit
+1461259255186	Rename local variable 'produto'
+1461259443803	Rename local variable 'produtos'
+1461259508545	Rename method 'insertProdutos'
+1461259598805	Rename local variable 'nome'
+1461278973335	Copy package
+1461278981240	Delete element
+1461278990990	Copy package
+1461279000652	Copy packages
+1461411495668	Rename local variable 'resultList'
+1461414772055	Rename type 'ProdutoCompra'
+1461421559009	Rename type 'CompraProduto'
+1461421719233	Rename type 'CompraProdutos'
+1461421839635	Delete element
+1461438101044	Rename field 'produtos'
+1461445294502	Rename local variable 'compras'

@@ -1,0 +1,106 @@
+package br.fa7.spring.tf.services;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.fa7.spring.tf.entity.Cliente;
+import br.fa7.spring.tf.entity.Endereco;
+import br.fa7.spring.tf.exception.ClienteNotFoundException;
+
+@Service
+public class ClienteServiceImpl implements ClienteService {
+
+	@Autowired
+	private EntityManager em;
+
+	@Override
+	public List<Cliente> buscarTodos() {
+
+		List<Cliente> clientes = (List<Cliente>) em.createQuery(
+				"From Cliente c").getResultList();
+
+		for (Cliente cliente : clientes) {
+
+			cliente.setEnderecos(getEnderecos(cliente.getId()));
+
+		}
+
+		return clientes;
+	}
+
+	@Override
+	public Cliente bucarPorId(Long id) {
+		return em.find(Cliente.class, id);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Endereco> getEnderecos(Long idUser) {
+
+		String consulta = "from Endereco e where e.id_cliente=" + idUser;
+
+		return ((List<Endereco>) em.createQuery(consulta).setParameter(
+				"idUser", idUser));
+	}
+
+	@Override
+	public Endereco buscarPorId(Long idUser, Long idEndereco) {
+		String consulta = "from Endereco e where e.id_cliente like :idUser AND e.id like :id";
+		return (Endereco) em.createQuery(consulta)
+				.setParameter("idUser", idUser).setParameter("id", idEndereco);
+	}
+
+	@Override
+	@Transactional
+	public void inserir(Cliente cliente) {
+		em.persist(cliente);
+
+	}
+
+	@Override
+	@Transactional
+	public void inserir(Endereco endereco, Cliente cliente) {
+		Cliente cBd = bucarPorId(cliente.getId());
+		if (cBd != null) {
+
+			em.persist(endereco);
+		} else {
+			throw new ClienteNotFoundException(String.format(
+					"Cliente de id '%d' não encontrado", cliente.getId()));
+		}
+
+	}
+
+	@Override
+	@Transactional
+	public Cliente atualizar(Cliente cliente) {
+		Cliente cBD = bucarPorId(cliente.getId());
+		if (cBD != null) {
+			cBD.setNome(cliente.getNome());
+			cBD.setEmail(cliente.getEmail());
+			cBD.setLogin(cliente.getLogin());
+			cBD.setEnderecos(cliente.getEnderecos());
+			return em.merge(cBD);
+		}
+		throw new ClienteNotFoundException(String.format(
+				"Cliente de id '%d' não encontrado", cliente.getId()));
+	}
+
+	@Override
+	public void removerCliente(Long id) {
+		Cliente cBD = bucarPorId(id);
+		if (cBD != null) {
+			em.remove(cBD);
+		} else {
+			throw new ClienteNotFoundException(String.format(
+					"Cliente de id '%d' não encontrado", id));
+		}
+
+	}
+
+}

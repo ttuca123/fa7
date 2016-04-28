@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	version="2.0">
+	<persistence-unit name="unidadePersistencia"
+		transaction-type="RESOURCE_LOCAL">
+		<!-- <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> 
+			<exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<properties>
+			<!-- Mysql Configs <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" 
+				/> <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/faculdade-jpa" 
+				/> <property name="javax.persistence.jdbc.user" value="root" /> <property 
+				name="javax.persistence.jdbc.password" value="root" /> -->
+
+
+			<!-- Postgres Configs -->
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/faculdade-jpa" />
+
+			<property name="javax.persistence.jdbc.user" value="postgres" />
+			<property name="javax.persistence.jdbc.password" value="123456" />
+
+
+			<!-- Oracle Configs <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver" 
+				/> <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE" 
+				/> <property name="javax.persistence.jdbc.user" value="alunos" /> <property 
+				name="javax.persistence.jdbc.password" value="alunos" /> -->
+
+			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" 
+				/> <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" 
+				/> <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" 
+				/> -->
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+
+
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="false" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+
+			<!-- <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/> 
+				<property name="eclipselink.create-ddl-jdbc-file-name" value="createDDL_ddlGeneration.jdbc"/> 
+				<property name="eclipselink.drop-ddl-jdbc-file-name" value="dropDDL_ddlGeneration.jdbc"/> 
+				<property name="eclipselink.ddl-generation.output-mode" value="both"/> -->
+
+		</properties>
+
+	</persistence-unit>
+
+</persistence>

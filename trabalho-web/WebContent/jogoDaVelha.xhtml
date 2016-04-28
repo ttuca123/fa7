@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title><h:outputText
+			value="#{msg['page.jogo.title']}" /></title>
+</h:head>
+<h:body>
+	<h:form id="usuarioForm">
+		<h:message globalOnly="true"/>
+		<h:panelGrid columns="2">
+			<h:panelGrid columns="1">
+				<h:outputLabel value="#{msg['page.jogo.jogadores']}:" />
+				
+				<h:panelGrid columns="3">
+					<h:outputLabel for="jogadorX" value="#{msg['page.jogo.x']}:" />
+					<h:inputText id="jogadorX" value="#{jogoDaVelhaBean.jogadorX}" required="true">
+						<f:validateLength minimum="3"/>
+					</h:inputText>
+					<h:message for="jogadorX" />
+					
+					<h:outputLabel for="jogadorO" value="#{msg['page.jogo.o']}:" />
+					<h:inputText id="jogadorO" value="#{jogoDaVelhaBean.jogadorO}" required="true">
+						<f:validateLength minimum="3"/>
+					</h:inputText>
+					<h:message for="jogadorO" />
+				</h:panelGrid>
+				
+				<h:commandButton actionListener="#{jogoDaVelhaBean.novoJogo}" value="#{msg['page.jogo.novo.jogo']}" >
+					<f:ajax execute="usuarioForm" render="usuarioForm" />
+				</h:commandButton>
+			</h:panelGrid>
+			
+			<h:panelGrid id="tabuleiro" columns="1">
+				<h:outputLabel value="#{jogoDaVelhaBean.titulo}" />
+				
+				<h:panelGrid columns="3" cellspacing="2" id="painelDeBotoes">
+					<h:commandButton id="btn11" x="0" y="0" actionListener="#{jogoDaVelhaBean.realizarJogada}" value="  " disabled="true">
+						<f:ajax execute="usuarioForm" render="tabuleiro" />
+					</h:commandButton>
+					<h:commandButton id="btn12" x="0" y="1" actionListener="#{jogoDaVelhaBean.realizarJogada}" value="  "  disabled="true">
+						<f:ajax execute="usuarioForm" render="tabuleiro" />
+					</h:commandButton>
+					<h:commandButton id="btn13" x="0" y="2" actionListener="#{jogoDaVelhaBean.realizarJogada}" value="  "  disabled="true">
+						<f:ajax execute="usuarioForm" render="tabuleiro" />
+					</h:commandButton>
+					
+					<h:commandButton id="btn21" x="1" y="0" actionListener="#{jogoDaVelhaBean.realizarJogada}" value="  " disabled="true">
+						<f:ajax execute="usuarioForm" render="tabuleiro" />
+					</h:commandButton>
+					<h:commandButton id="btn22" x="1" y="1" actionListener="#{jogoDaVelhaBean.realizarJogada}" value="  " disabled="true">
+						<f:ajax execute="usuarioForm" render="tabuleiro" />
+					</h:commandButton>
+					<h:commandButton id="btn23" x="1" y="2" actionListener="#{jogoDaVelhaBean.realizarJogada}" value="  " disabled="true">
+						<f:ajax execute="usuarioForm" render="tabuleiro" />
+					</h:commandButton>
+					
+					<h:commandButton id="btn31" x="2" y="0" actionListener="#{jogoDaVelhaBean.realizarJogada}" value="  " disabled="true">
+						<f:ajax execute="usuarioForm" render="tabuleiro" />
+					</h:commandButton>
+					<h:commandButton id="btn32" x="2" y="1" actionListener="#{jogoDaVelhaBean.realizarJogada}" value="  " disabled="true">
+						<f:ajax execute="usuarioForm" render="tabuleiro" />
+					</h:commandButton>
+					<h:commandButton id="btn33" x="2" y="2" actionListener="#{jogoDaVelhaBean.realizarJogada}" value="  " disabled="true">
+						<f:ajax execute="usuarioForm" render="tabuleiro" />
+					</h:commandButton>
+				</h:panelGrid>
+			</h:panelGrid>
+		
+		</h:panelGrid>
+	</h:form>
+	 <a href="index.xhtml"><h:outputText value="#{msg['commons.voltar']}" /></a>
+</h:body>
+</html>

@@ -1,0 +1,86 @@
+package br.com.web.bean;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+
+import br.com.web.model.UsuarioBtp;
+import br.com.web.vo.Usuario;
+
+/**
+ * 
+ * @author Artur
+ *
+ */
+
+@ManagedBean
+public class UserBean {
+
+	Usuario usuario = new Usuario();
+
+	@ManagedProperty("#{usuarioBtp}")
+	private UsuarioBtp usuarioBtp = new UsuarioBtp(new ArrayList<Usuario>());
+
+	public UsuarioBtp getUsuarioBtp() {
+		return usuarioBtp;
+	}
+
+	public void setUsuarioBtp(UsuarioBtp usuarioBtp) {
+		this.usuarioBtp = usuarioBtp;
+	}
+
+	public Usuario getUsuario() {
+
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public String novo() {
+
+		usuario = new Usuario("nome");
+
+		return "usuario-editar";
+
+	}
+
+	public String editar() {
+
+		return "usuario-editar";
+	}
+
+	public String salvar() {
+
+		usuarioBtp.incluir(usuario);
+
+		return "usuarios-list";
+
+	}
+
+	public boolean isListaVazia() {
+		boolean condicao = false;
+		if (usuarioBtp.getUsuariosVO().size() > 0) {
+
+			condicao = true;
+		}
+
+		return condicao;
+
+	}
+
+	public List<Usuario> getListar() {
+
+		return usuarioBtp.getUsuariosVO();
+
+	}
+
+	public String excluir() {
+
+		usuarioBtp.excluir(usuario.getId());
+		return "usuarios";
+	}
+}

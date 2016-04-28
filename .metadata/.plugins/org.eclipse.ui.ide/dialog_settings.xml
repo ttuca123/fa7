@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="CleanDialogSettings">
+		<item value="563" key="DIALOG_WIDTH"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="386" key="DIALOG_HEIGHT"/>
+		<item value="434" key="DIALOG_X_ORIGIN"/>
+		<item value="153" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/tuca/workspace3-fa7/fa7/loja"/>
+			<item value="/home/tuca/workspace3-fa7/fa7/clientes"/>
+			<item value="/home/tuca/fa7/clientes"/>
+			<item value="/home/tuca/fa7/loja"/>
+			<item value="/home/tuca/git/clientes"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="338" key="DIALOG_X_ORIGIN"/>
+		<item value="174" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode path=&quot;/loja/test/br/edu/fa7/testes/TestesIntegracao.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/clientes/src/main/java/br/edu/fa7/spring/tf/services/ClienteServiceImpl.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/loja/src/main/java/br/edu/fa7/loja/resources/ProdutoResource.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/loja/src/main/java/br/edu/fa7/loja/services/ProdutoServiceImpl.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/loja/pom.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/loja/src/main/java/br/edu/fa7/loja/services/CompraService.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/loja/src/main/java/br/edu/fa7/loja/services/ProdutoService.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/clientes/src/main/java/br/edu/fa7/spring/tf/services/ClienteService.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/loja/src/main/resources/META-INF/persistence.xml&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/loja/src/test/java/br/edu/fa7/loja/rest/testes/TestesRestCompra.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/clientes/src/main/java/br/edu/fa7/spring/tf/resources/ClienteResource.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/loja/src/main/java/br/edu/fa7/loja/resources/CompraResource.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/loja/src/main/java/br/edu/fa7/loja/services/CompraServiceImpl.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/clientes/src/main/java/br/edu/fa7/spring/tf/Main.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/loja/src/test/java/br/edu/fa7/loja/rest/testes/TestesRestProduto.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
+		<item value="false" key="ShowDerived"/>
+		<section name="DialogBoundsSettings">
+			<item value="660" key="DIALOG_WIDTH"/>
+			<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+			<item value="648" key="DIALOG_HEIGHT"/>
+			<item value="350" key="DIALOG_X_ORIGIN"/>
+			<item value="0" key="DIALOG_Y_ORIGIN"/>
+		</section>
+	</section>
+</section>

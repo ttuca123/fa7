@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+	
+    <application>
+	<!--  	<resource-bundle>
+			<base-name>SystemMessages_pt_BR</base-name>
+			<var>msg</var>
+		</resource-bundle>
+		<locale-config>
+			<default-locale>pt_BR</default-locale>
+		</locale-config>
+		
+		<message-bundle>resources.Messages</message-bundle>
+		-->
+		
+		<resource-bundle>
+    		<base-name>SystemMessages_pt_BR</base-name>
+    		<var>msg</var>
+		</resource-bundle>
+		<locale-config>
+			<default-locale>pt_BR</default-locale>
+		</locale-config>
+		
+		
+	</application>
+	
+    
+   	 <managed-bean>
+					<managed-bean-name>userBean</managed-bean-name>
+					<managed-bean-class>br.com.web.bean.UserBean
+					</managed-bean-class>
+					<managed-bean-scope>session</managed-bean-scope>
+					
+	</managed-bean>			
+	 
+	  		<managed-bean>
+					<managed-bean-name>jogoDaVelhaBean</managed-bean-name>
+					<managed-bean-class>br.com.web.bean.JogoDaVelhaBean
+					</managed-bean-class>
+					<managed-bean-scope>session</managed-bean-scope>					
+			</managed-bean>
+
+	 
+	 <converter>
+			<converter-id>converters.CepConverter</converter-id>
+			<converter-class>
+			br.com.cursoweb.converter.CepConverter
+			</converter-class>
+	</converter>
+	
+	 <validator>
+	     <validator-id>validators.CepValidator</validator-id>
+	     <validator-class>
+			br.com.cursoweb.validator.CepValidator
+			</validator-class>
+	     
+	 </validator>
+	 
+</faces-config>

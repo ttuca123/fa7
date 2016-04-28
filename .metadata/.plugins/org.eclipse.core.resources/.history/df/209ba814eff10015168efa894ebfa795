@@ -1,0 +1,139 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package br.edu.fa7.model;
+
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name = "funcionario")
+@Inheritance(strategy=InheritanceType.JOINED)
+public abstract class Funcionario extends BaseModel {	
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6563846797910943364L;
+
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "seq_func")
+    protected Integer seqFunc;
+
+    @Column(name = "nome")
+    @Basic(optional = false)
+    protected String nome;
+    
+    @Transient
+    protected Integer idade;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "data_nascimento")
+    @Basic(optional = false)
+    protected Date dataNascimento;
+    
+    @Column(name = "cpf")
+    @Basic(optional = false)
+    protected String cpf;
+    
+    @Temporal(TemporalType.DATE)
+    @Column(name = "data_registro")
+    @Basic(optional = true)
+    protected Date dataRegistro;
+    
+    @Temporal(TemporalType.DATE)
+    @Column(name = "data_alteracao")
+    @Basic(optional = true)
+    protected Date dataAlteracao;   
+
+	public Integer getId() {
+		return seqFunc;
+	}
+
+	public void setId(Integer id) {
+		this.seqFunc = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public Integer getIdade() {
+		
+//		if(idade == null)
+//			calculateAge();
+		
+		return idade;
+	}
+
+	public void setIdade(Integer idade) {
+		this.idade = idade;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public Date getDataRegistro() {
+		return dataRegistro;
+	}
+
+	public void setDataRegistro(Date dataRegistro) {
+		this.dataRegistro = dataRegistro;
+	}
+
+	public Date getDataAlteracao() {
+		return dataAlteracao;
+	}
+
+	public void setDataAlteracao(Date dataAlteracao) {
+		this.dataAlteracao = dataAlteracao;
+	}
+	
+    public void calculateAge() {
+        Calendar birth = new GregorianCalendar();
+        birth.setTime(dataNascimento);
+        Calendar now = new GregorianCalendar();
+        now.setTime( new Date() );
+        int adjust = 0;
+        if ( now.get(Calendar.DAY_OF_YEAR) - birth.get(Calendar.DAY_OF_YEAR) < 0) {
+            adjust = -1;
+        }
+        idade = now.get(Calendar.YEAR) - birth.get(Calendar.YEAR) + adjust;
+    }
+    
+}

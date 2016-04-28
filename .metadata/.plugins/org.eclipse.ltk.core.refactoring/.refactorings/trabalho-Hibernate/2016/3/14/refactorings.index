@@ -1,0 +1,60 @@
+1459037198086	Change method 'getMesaByNrMesa'
+1459037678968	Rename field 'isDisponivel'
+1459038808886	Rename local variable 'nrMesa'
+1459039058172	Rename local variable 'mesa'
+1459039601575	Rename type 'EncerramentoConta'
+1459040104978	Rename field 'dataNascimento'
+1459078800024	Rename field 'pedidos'
+1459079949983	Rename type 'CriacaoPedido'
+1459080690591	Copy compilation unit
+1459080717940	Copy compilation unit
+1459080831682	Rename method 'exibirClientes'
+1459080964091	Copy compilation unit
+1459081502767	Delete element
+1459081533707	Delete element
+1459082579011	Rename method 'manterMesa'
+1459099292323	Copy compilation unit
+1459099309612	Copy compilation unit
+1459099389084	Rename method 'manterMesa'
+1459099443618	Rename method 'exibirClientes'
+1459099472448	Rename field 'clienteDAO'
+1459099607480	Rename local variable 'clientes'
+1459099618509	Rename local variable 'cliente'
+1459100691774	Rename local variable 'condicao'
+1459101671807	Copy compilation unit
+1459101763780	Rename field 'periodo'
+1459101770868	Rename local variable 'periodo'
+1459101785857	Rename field 'tipo'
+1459101790262	Rename local variable 'tipo'
+1459101799808	Rename field 'periodo'
+1459101803728	Rename local variable 'periodo'
+1459101812001	Rename local variable 'tipo'
+1459101868073	Rename field 'status'
+1459101872224	Rename local variable 'status'
+1459102152084	Delete element
+1459102187033	Copy compilation unit
+1459102216222	Rename method 'manterPedido'
+1459102369137	Rename method 'incluirPedido'
+1459102776555	Copy compilation unit
+1459102794868	Rename local variable 'cliente'
+1459102902786	Rename method 'cadastrarCliente'
+1459103105273	Rename method 'listarPedidos'
+1459103519464	Rename local variable 'garcomBean'
+1459104297204	Rename local variable 'nrPedido'
+1459104483776	Rename method 'buscarPedido'
+1459114337659	Rename local variable 'nome'
+1459126950970	Rename local variable 'nrMesa'
+1459127061287	Rename local variable 'nrMesa'
+1459129089917	Delete element
+1459129098344	Delete element
+1459129104484	Delete element
+1459131344215	Rename local variable 'optItem'
+1459132304729	Rename field 'total'
+1459188348910	Delete element
+1459190940336	Rename local variable 'pedido'
+1459192667879	Delete element
+1459193383076	Copy compilation unit
+1459194448014	Rename method 'realizarCarga'
+1459195772863	Rename type 'TesteCarga'
+1459218253509	Rename local variable 'questionId'
+1459218306339	Rename local variable 'faqQuestions'

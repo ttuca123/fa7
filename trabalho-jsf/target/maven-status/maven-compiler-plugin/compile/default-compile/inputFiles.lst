@@ -1,0 +1,11 @@
+/home/tuca/workspace3-fa7/trabalho-jsf/src/br/com/trabalho/jsf/model/Usuario.java
+/home/tuca/workspace3-fa7/trabalho-jsf/src/br/com/trabalho/jsf/business/UsuarioBusiness.java
+/home/tuca/workspace3-fa7/trabalho-jsf/src/br/com/cursojsf/listeners/LoginPhaseListener.java
+/home/tuca/workspace3-fa7/trabalho-jsf/src/br/com/trabalho/jsf/model/BaseModel.java
+/home/tuca/workspace3-fa7/trabalho-jsf/src/br/com/cursojsf/listeners/MyPhaseListener.java
+/home/tuca/workspace3-fa7/trabalho-jsf/src/br/com/trabalho/jsf/managedbean/LoginBean.java
+/home/tuca/workspace3-fa7/trabalho-jsf/src/br/com/trabalho/jsf/business/UsuarioInvalidoException.java
+/home/tuca/workspace3-fa7/trabalho-jsf/src/br/com/trabalho/jsf/dao/SimpleDaoGenerico.java
+/home/tuca/workspace3-fa7/trabalho-jsf/src/br/com/cursojsf/listeners/ErrorActionListener.java
+/home/tuca/workspace3-fa7/trabalho-jsf/src/br/com/trabalho/jsf/dao/UsuarioDao.java
+/home/tuca/workspace3-fa7/trabalho-jsf/src/br/com/cursojsf/listeners/LocalePhaseListener.java

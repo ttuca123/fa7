@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="clientes">
+        <property name="context-root" value="clientes"/>
+        <property name="java-output-path" value="/clientes/target/classes"/>
+    </wb-module>
+</project-modules>

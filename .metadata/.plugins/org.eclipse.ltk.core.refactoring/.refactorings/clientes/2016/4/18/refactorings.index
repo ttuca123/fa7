@@ -1,0 +1,19 @@
+1461584895014	Rename method 'acharTodos'
+1461627669068	Rename local variable 'endereco'
+1461627735115	Rename method 'buscarTodos'
+1461627747327	Rename method 'bucarPorId'
+1461627773845	Rename method 'buscarPorId'
+1461627836400	Rename method 'buscarTodos'
+1461628173328	Delete element
+1461628256484	Rename package 'br.fa7.spring.tf'
+1461628263632	Rename package 'br.fa7.spring.tf.entity'
+1461628270755	Rename package 'br.fa7.spring.tf.resources'
+1461628279267	Rename package 'br.fa7.spring.tf.services'
+1461630557713	Delete element
+1461630661242	Delete element
+1461700185863	Copy compilation unit
+1461729950816	Delete element
+1461729964813	Rename type 'TestesIntegracaoCompra'
+1461729997359	Rename package 'br.edu.fa7.loja.testes'
+1461730075254	Rename type 'TestesRestCompra'
+1461758704816	Rename compilation unit 'TestesRestClientes.java'

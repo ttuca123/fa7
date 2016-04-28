@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/WEB-INF/templates/padrao.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+    <ui:define name="title">#{msg['page.usuariosEditar.title']}</ui:define>
+    <ui:define name="body">
+
+        <h:form id="usuarioForm">
+        	<h:inputHidden id="idInputHidden" value="#{usuarioBean.usuario.id}" />
+            <h:panelGrid columns="3">
+                <p:outputLabel for="idInput"
+                    value="#{msg['page.usuarios.label.id']}:" />
+                <p:inputText id="idInput"
+                    value="#{usuarioBean.usuario.id}"
+					disabled="true" />
+                <p:message for="idInput" />
+
+                <p:outputLabel for="cpfInput"
+                    value="#{msg['page.usuarios.label.cpf']}:" />
+                <p:inputText id="cpfInput"
+                    value="#{usuarioBean.usuario.cpf}" required="true">
+                    <f:converter converterId="converters.CpfConverter" />
+                    <f:validator validatorId="validators.CpfValidator" />
+                </p:inputText>
+                <p:message for="cpfInput" />
+
+                <p:outputLabel for="nomeReduzidoInput"
+                    value="#{msg['page.usuarios.label.nomeReduzido']}:" />
+                <p:inputText id="nomeReduzidoInput"
+                    value="#{usuarioBean.usuario.nomeReduzido}" required="true" />
+                <p:message for="nomeReduzidoInput" />
+
+                <p:outputLabel for="nomeCompletoInput"
+                    value="#{msg['page.usuarios.label.nomeCompleto']}:" />
+                <p:inputTextarea id="nomeCompletoInput"
+                    value="#{usuarioBean.usuario.nomeCompleto}" rows="5"
+                    cols="20" />
+                <p:message for="nomeCompletoInput" />
+
+                <p:outputLabel for="emailInput"
+                    value="#{msg['page.usuarios.label.email']}:" />
+                <p:inputText id="emailInput"
+                    value="#{usuarioBean.usuario.email}" required="true" />
+                <p:message for="emailInput" />
+
+                <p:outputLabel for="dataNascimentoInput"
+                    value="#{msg['page.usuarios.label.dataNascimento']}:" />
+                <p:calendar id="dataNascimentoInput"
+                    value="#{usuarioBean.usuario.dataNascimento}"
+                    locale="#{localeBean.locale}" navigator="true"
+                    pattern="dd/MM/yyyy" mask="true" />
+                <p:message for="dataNascimentoInput" />
+
+                <p:outputLabel for="senhaInput"
+                    value="#{msg['page.usuarios.label.senha']}:" />
+                <p:inputText id="senhaInput"
+                    value="#{usuarioBean.usuario.senha}" required="true">
+                    <f:validateLength minimum="6" maximum="10" />
+                </p:inputText>
+                <p:message for="senhaInput" />
+            </h:panelGrid>
+            <hr />
+            <p:commandButton action="#{usuarioBean.salvar}"
+                value="#{msg['commons.salvar']}" ajax="false" />
+            <p:commandButton action="usuarios"
+                value="#{msg['commons.voltar']}" immediate="true"
+                ajax="false" />
+        </h:form>
+    </ui:define>
+</ui:composition>

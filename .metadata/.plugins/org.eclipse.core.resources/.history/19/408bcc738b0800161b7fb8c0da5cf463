@@ -1,0 +1,56 @@
+package br.edu.fa7.loja.dao;
+
+import java.util.List;
+
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import br.edu.fa7.loja.entities.Compra;
+import br.edu.fa7.loja.entities.Produto;
+import br.edu.fa7.loja.services.CompraService;
+
+@Stateless(name = "CompraService")
+public class CompraDAO implements CompraService {
+
+	@PersistenceContext(name = "persistenceUnit")
+	EntityManager em;
+
+	@Override
+	public Compra getCompra(Long id) {
+
+		Compra compra = em.find(Compra.class, id);
+
+		return compra;
+	}
+
+	@Override
+	public List<Compra> getCompras() {
+			
+		List<Compra> resultList = em.createQuery("select c from Compra c").getResultList();
+		 
+		 for (Compra compra :resultList) {
+			compra.getProdutos().size();
+		} 
+		 
+		 
+	}
+
+	@Override
+	public Compra comprar(Long seqCliente, Long idProduto) {
+
+		Compra compra = new Compra();
+		compra.setSeqCliente(seqCliente);
+
+		Produto prod = (Produto) em.createQuery(
+				"select p from Produto p where p.id=" + idProduto)
+				.getSingleResult();
+
+		compra.getProdutos().add(prod);
+
+		em.persist(compra);
+
+		return compra;
+	}
+
+}

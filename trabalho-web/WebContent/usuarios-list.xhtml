@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+
+
+	<h:body>
+
+		<h:form id="usuarioForm">
+			<h:dataTable value="#{userBean.listar}" var="usuario" border="1"
+				cellspacing="1" cellpadding="2" rendered="#{userBean.listaVazia}">
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="#{msg['page.usuarios.label.nomeReal']}" />
+
+					</f:facet>
+					<h:inputText value="#{usuario.nomeReal}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+
+						<h:outputText value="#{msg['page.usuarios.label.cep']}" />
+
+					</f:facet>
+					<h:outputText value="#{usuario.cep}"
+						converter="converters.CepConverter" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+
+						<h:outputText value="#{msg['page.usuariosEditar.title']}" />
+
+					</f:facet>
+
+					<h:commandLink action="#{userBean.editar}" value="#{msg['commons.editar']}">
+						<f:setPropertyActionListener target="#{userBean.usuario}"
+							value="#{usuario}" />
+					</h:commandLink>
+				</h:column>
+				<h:column>
+
+					<f:facet name="header">
+
+						<h:outputText value="#{msg['commons.excluir']}" />
+
+					</f:facet>
+					<h:commandLink action="#{userBean.excluir}" value="#{msg['commons.excluir']}">
+						<f:setPropertyActionListener target="#{userBean.usuario}"
+							value="#{usuario}" />
+					</h:commandLink>
+
+
+				</h:column>
+
+			</h:dataTable>
+			
+			<h:commandLink action="#{userBean.novo}" value="#{msg['commons.novo']}" />
+
+		</h:form>
+						
+		  <a href="index.xhtml"><h:outputText value="#{msg['commons.voltar']}" /></a>
+	</h:body>
+</ui:composition>

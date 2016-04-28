@@ -1,0 +1,18 @@
+package br.edu.fa7.loja.services;
+
+import java.util.List;
+
+import javax.ejb.Remote;
+
+import br.edu.fa7.loja.entity.Produto;
+
+@Remote
+public interface ProdutoService {
+
+	public Produto getProduto(Long id);
+
+	public List<Produto> getProdutos();
+
+	public void inserir(Produto produtos);
+
+}

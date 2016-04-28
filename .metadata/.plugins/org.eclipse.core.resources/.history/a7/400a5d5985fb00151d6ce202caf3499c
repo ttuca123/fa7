@@ -1,0 +1,19 @@
+package br.edu.aloejb;
+
+import AloMundoBeanRemote;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class AloMundoBean
+ */
+@Stateless
+public class AloMundoBean extends AloMundoBeanRemote implements AloMundoBeanRemote {
+
+    /**
+     * Default constructor. 
+     */
+    public AloMundoBean() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

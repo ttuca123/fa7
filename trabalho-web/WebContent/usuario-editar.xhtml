@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+	<h:body>
+		<h:form>
+			<table>
+				<tr>
+
+					<td><h:outputLabel
+							value="#{msg['page.usuarios.label.nomeReal']}"  /></td>
+					<td><h:inputText id="nomeReal" value="#{userBean.usuario.nomeReal}"  required = "true"
+							 />	 <h:message for="nomeReal" /></td>
+							
+				</tr>
+				<tr>
+					<td><h:outputLabel value="#{msg['page.usuarios.label.cep']}" /></td>
+					<td><h:inputText id="cep" value="#{userBean.usuario.cep}" maxlength="9"
+							size="9" converter="converters.CepConverter"  >
+							<f:validator validatorId="validators.CepValidator"></f:validator>
+						</h:inputText><h:message for="cep" /></td>
+				</tr>
+			</table>
+			<h:commandLink action="#{userBean.salvar}" value="#{msg['commons.salvar']}"
+				ajax="false" />
+		</h:form>
+
+		<a href="usuarios-list.xhtml"><h:outputText
+				value="#{msg['commons.voltar']}" /></a>
+	
+	
+	</h:body>
+
+
+
+</ui:composition>

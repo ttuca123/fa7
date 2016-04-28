@@ -1,0 +1,81 @@
+1458844382710	Rename type 'Pessoa'
+1458844456111	Rename field 'id'
+1458907618467	Rename type 'Aluno'
+1458908992472	Delete elements
+1458909011794	Delete elements
+1458909080802	Delete elements
+1458909101921	Rename type 'PessoaDao'
+1458909133375	Delete element
+1458914007399	Rename local variable 'a1'
+1458914023936	Rename local variable 'dt'
+1458915115888	Rename local variable 'a2'
+1458915575863	Copy compilation unit
+1458915612751	Copy compilation unit
+1458915638685	Copy compilation unit
+1458915664513	Rename field 'seqCargo'
+1458916499474	Rename type 'Horario'
+1458916769143	Copy compilation unit
+1458917093763	Copy compilation unit
+1458917132594	Rename field 'seqCargo'
+1458927515967	Rename field 'pedidos'
+1458934998036	Copy compilation unit
+1458935017632	Rename field 'seqCargo'
+1458957967560	Copy compilation unit
+1458957997412	Rename field 'seqMesa'
+1458958321058	Delete element
+1458958583808	Rename type 'ItemPedidoDAO'
+1458958895803	Delete element
+1458959822414	Rename local variable 'reader'
+1458959836935	Rename local variable 'reader'
+1458959960267	Rename local variable 'readerOptGeral'
+1458992797274	Change method 'cadastrar'
+1458993502320	Rename local variable 'nome'
+1458998187716	Rename local variable 'ativo'
+1458998863518	Copy compilation unit
+1458999099411	Rename field 'periodo'
+1458999104805	Rename local variable 'periodo'
+1458999373965	Copy compilation unit
+1458999955797	Rename local variable 'itens'
+1459001086684	Rename method 'atualizar'
+1459001246183	Copy compilation unit
+1459002719125	Rename local variable 'criterios'
+1459002943616	Rename local variable 'criterias'
+1459003183170	Rename local variable 'criteria'
+1459004622669	Delete element
+1459004633179	Delete element
+1459005512461	Rename enum constant 'ATIVO'
+1459005712586	Rename local variable 'item'
+1459009107704	Copy compilation unit
+1459009296547	Copy compilation unit
+1459009658637	Rename field 'itensPedido'
+1459010948878	Rename local variable 'status'
+1459012407262	Rename method 'listarTodos'
+1459013318628	Rename method 'listarItensDisponiveis'
+1459014662034	Rename local variable 'restricoes'
+1459019860533	Copy compilation unit
+1459019961938	Rename local variable 'item'
+1459021009144	Change method 'listarItensAtivos'
+1459022058062	Rename local variable 'itemCardapio'
+1459023100865	Rename local variable 'condicao'
+1459026579926	Change method 'getPeriodo'
+1459027299727	Rename local variable 'itens'
+1459027833202	Copy compilation unit
+1459027851027	Rename field 'itens'
+1459027874242	Rename field 'itemCardapioDAO'
+1459027973717	Rename method 'exibirItensAtivos'
+1459027980609	Rename method 'exibirMesasAtivos'
+1459028321007	Rename method 'registrarItem'
+1459028435259	Rename local variable 'nomeItem'
+1459028555530	Rename local variable 'nomeItem'
+1459029622031	Rename method 'excluirItem'
+1459029787782	Rename method 'manterItemPedido'
+1459030358313	Copy compilation unit
+1459030369019	Rename field 'mesaDAO'
+1459030407187	Copy compilation unit
+1459030628448	Rename local variable 'mesa'
+1459031239456	Rename local variable 'mesa'
+1459033979846	Copy compilation unit
+1459034097228	Copy compilation unit
+1459034504664	Rename field 'status'
+1459034509399	Rename local variable 'status'
+1459034866530	Rename field 'matricula'

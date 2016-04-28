@@ -1,0 +1,23 @@
+1461521839634	Rename local variable 'compraProdutos'
+1461523914993	Delete elements
+1461628206649	Rename package 'br.edu.fa7.loja.entities'
+1461628338820	Copy compilation units
+1461628346417	Delete element
+1461628362792	Rename type 'CompraDAO'
+1461628371383	Rename type 'ProdutoDAO'
+1461628578315	Rename method 'putProduto'
+1461628609429	Rename method 'inserirProduto'
+1461629591163	Rename local variable 'idProduto'
+1461629754949	Rename local variable 'idProduto'
+1461695776521	Move compilation unit
+1461700223794	Rename type 'ClienteNotFoundException'
+1461728157675	Copy compilation unit
+1461728175439	Copy compilation unit
+1461728403392	Delete element
+1461729928854	Copy package
+1461730025899	Rename package 'br.edu.fa7.loja.testes'
+1461730044007	Rename type 'TestesIntegracaoCompra'
+1461730053924	Rename type 'TestesIntegracaoProduto'
+1461758053042	Rename local variable 'cliente'
+1461837645954	Delete element
+1461884178950	Delete element

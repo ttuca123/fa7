@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+	<!-- Configurações gerais do JSF -->
+	<application>
+		<resource-bundle>
+			<base-name>SystemMessages</base-name>
+			<var>msg</var>
+		</resource-bundle>
+		<locale-config>
+			<default-locale>pt_BR</default-locale>
+		</locale-config>
+		<message-bundle>javax.faces.FacesMessages</message-bundle>
+	</application>
+	
+	<lifecycle>
+		<phase-listener>br.com.cursojsf.listeners.LoginPhaseListener</phase-listener>
+	</lifecycle>
+
+	<!-- Beans -->
+	<managed-bean>
+		<managed-bean-name>usuarioDao</managed-bean-name>
+		<managed-bean-class>br.com.cursojsf.dao.UsuarioDao</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>usuarioBusiness</managed-bean-name>
+		<managed-bean-class>br.com.cursojsf.business.UsuarioBusiness</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+		<managed-property>
+			<property-name>usuarioDao</property-name>
+			<value>#{usuarioDao}</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>usuarioBean</managed-bean-name>
+		<managed-bean-class>br.com.cursojsf.managedbean.UsuarioBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>usuarioBusiness</property-name>
+			<value>#{usuarioBusiness}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>loginBean</managed-bean-name>
+		<managed-bean-class>br.com.cursojsf.managedbean.LoginBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>usuarioBusiness</property-name>
+			<value>#{usuarioBusiness}</value>
+		</managed-property>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>jogoDaVelhaBean</managed-bean-name>
+		<managed-bean-class>br.com.cursojsf.managedbean.JogoDaVelhaBean</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
+	
+	<!-- Regras de navegação -->
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>usuarios</from-outcome>
+			<to-view-id>/usuarios.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>usuariosEditar</from-outcome>
+			<to-view-id>/usuariosEditar.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>jogoDaVelha</from-outcome>
+			<to-view-id>/jogoDaVelha.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

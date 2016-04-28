@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+    
+    <!-- Configuracoes gerais do JSF -->
+    <application>
+        <resource-bundle>
+            <base-name>SystemMessages</base-name>
+            <var>msg</var>
+        </resource-bundle>
+        <locale-config>
+            <default-locale>pt_BR</default-locale>
+            <supported-locale>en</supported-locale>
+        </locale-config>
+        <action-listener>br.com.cursojsf.listeners.ErrorActionListener</action-listener>
+    </application>
+    <lifecycle>
+        <phase-listener>br.com.cursojsf.listeners.MyPhaseListener</phase-listener>
+        <phase-listener>br.com.cursojsf.listeners.LoginPhaseListener</phase-listener>
+        <phase-listener>br.com.cursojsf.listeners.LocalePhaseListener</phase-listener>
+    </lifecycle>
+    
+    
+    
+			   
+</faces-config>

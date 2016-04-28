@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="body">
+		<h:form id="loginForm">
+			<h:message for="loginForm" errorStyle="color: red;" />
+
+			<h:button></h:button>
+
+		</h:form>
+
+
+	</ui:define>
+	<div align="center">
+		<p:panel header="#{msg['page.login.title']}"
+			style="width: 50%; margin-top: 100px;">
+			<div align="center">
+				<h:form id="loginForm">
+					<h:message for="loginForm" errorStyle="color: red;" />
+					<h:panelGrid columns="3">
+						<p:outputLabel for="cpfInput"
+							value="#{msg['page.login.label.cpf']}:" />
+						<p:inputMask id="cpfInput" value="#{loginBean.cpf}" maxlength="11"
+							size="12" required="true" mask="999.999.999-99"
+							converter="converters.CpfConverter" />
+						<p:message for="cpfInput" errorStyle="color: red;" />
+
+						<p:outputLabel for="senhaInput"
+							value="#{msg['page.login.label.senha']}:" />
+						<h:inputSecret id="senhaInput" value="#{loginBean.senha}"
+							maxlength="11" size="12" required="true"
+							styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all ui-state-hover" />
+						<p:message for="senhaInput" errorStyle="color: red;" />
+					</h:panelGrid>
+					<p:commandButton action="#{loginBean.autenticar}"
+						value="#{msg['page.login.label.entrar']}" ajax="false" />
+				</h:form>
+			</div>
+		</p:panel>
+	</div>
+
+</ui:composition>

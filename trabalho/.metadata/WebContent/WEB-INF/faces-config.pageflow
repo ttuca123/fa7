@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14566232838860" configfile="/trabalho/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" id="pf14566943457548" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14566943457549 pf145669434575410 pf145669434575411" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuarios.xhtml" id="pf145669434575412" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14566943457549" path="/usuarios.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuariosEditar.xhtml" id="pf145669434575413" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf145669434575410" path="/usuariosEditar.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="jogoDaVelha.xhtml" id="pf145669434575414" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf145669434575411" path="/jogoDaVelha.xhtml"/>
+  <links id="pf14566943457549" target="pf145669434575412" source="pf14566943457548" outcome="usuarios" redirect="true"/>
+  <links id="pf145669434575410" target="pf145669434575413" source="pf14566943457548" outcome="usuariosEditar"/>
+  <links id="pf145669434575411" target="pf145669434575414" source="pf14566943457548" outcome="jogoDaVelha" redirect="true"/>
+</pageflow:Pageflow>
