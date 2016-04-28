@@ -1,11 +1,11 @@
-#Thu Apr 28 20:15:20 BRT 2016
+#Thu Apr 28 20:05:29 BRT 2016
 vl=How many times the 'Finish' button pressed during the day
 l=Wizard class name
 ct=jbt
-d=1461885320297
+d=1461884729795
 c=0
 cmp=usage
 a=finishWizard
-cl=org.eclipse.egit.ui.internal.sharing.SharingWizard
+cl=org.eclipse.egit.ui.internal.push.PushWizard
 v=2.0.2
 s=2
